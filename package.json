@@ -1,0 +1,22 @@
+{
+  "name": "tutorial_group_24",
+  "version": "1.0.0",
+  "description": "Tutorial Repo for Group 24",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deep-muni94/Tutorial_Group_24.git"
+  },
+  "author": "Group 24",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deep-muni94/Tutorial_Group_24/issues"
+  },
+  "homepage": "https://github.com/deep-muni94/Tutorial_Group_24#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
