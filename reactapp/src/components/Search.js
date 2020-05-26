@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ResultBox from './ResultBox';
+import Card from './Card';
 
 class Search extends Component {
     constructor(props) {
@@ -122,19 +123,21 @@ class Search extends Component {
                     "Poster":"https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg"
                 }
             ],
-            list: []
+            list: [],
+            movie: "",
+            image: "",
+            showing:false
         }
         this.change = this.change.bind(this);
     }
 
-    onSelectDrpDwnItem = (drpDwnVal) => {
-        this.setState({
-            selectedValue: drpDwnVal.text,
-            list: []
-        });
+     onClickDrpDwnItem(movie,image) {
+        this.setState({movie: movie, image:image ,showing:true,list: []});
+        document.getElementById("searchBox").value = movie;
     }
 
     render() {
+        var showing = this.state.showing;
         return (
             <main role="main" className="container mt-5">
                 {/*<span style={{ textAlign: "center" }}><h2>Search for Marvel movies.</h2></span>*/}
@@ -149,11 +152,17 @@ class Search extends Component {
                     </div>
                     <div className='continer' id='searchResults'>
                         {this.state.list.map((row) => (
-                            <ResultBox key={row.id} text={row.name} onSelectDrpDwnItem={this.onSelectDrpDwnItem} />
+                            <ResultBox key={row.id} text={row.name}  image={row.Poster} clickHandler={this.onClickDrpDwnItem.bind(this)}/>
                         ))}
                     </div>
-
                 </div>
+                    {
+                        showing?
+                            <div id={"moviecard"}>
+                                <Card title_key={this.state.movie} image={this.state.image} />
+                            </div>
+                            :null
+                    }
             </main>
         );
     }
@@ -161,6 +170,10 @@ class Search extends Component {
         // console.log(evt.target.value);
         const searchString = evt.target.value
         const searchList = []
+
+        if (searchString.length === 0) {
+            this.setState({movie: "", image: "",showing:false})
+        }
         //Search the movie
         this.state.marvelMovieList.map((row) => {
             if (row.name.toLowerCase().includes(searchString.toLowerCase()) && searchString !== ''
