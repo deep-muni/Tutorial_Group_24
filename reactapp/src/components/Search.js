@@ -1,164 +1,61 @@
 import React, { Component } from 'react';
 import ResultBox from './ResultBox';
 
-
 class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            marvelMovieList: [
-                {
-                    "id": 1,
-                    "name":"Iron Man",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg"
-                },
-                {
-                    "id": 2,
-                    "name":"The Incredible Hulk",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTUyNzk3MjA1OF5BMl5BanBnXkFtZTcwMTE1Njg2MQ@@._V1_SX300.jpg"
-                },
-                {
-                    "id": 3,
-                    "name":"Iron Man 2",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTM0MDgwNjMyMl5BMl5BanBnXkFtZTcwNTg3NzAzMw@@._V1_SX300.jpg"
-                },
-                {
-                    "id": 4,
-                    "name":"Thor",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg"
-                },
-                {
-                    "id": 5,
-                    "name":"Captain America: The First Avenger",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
-                },
-                {
-                    "id": 6,
-                    "name":"The Avengers",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
-                },
-                {
-                    "id": 7,
-                    "name":"Iron Man 3",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_SX300.jpg"
-                },
-                {
-                    "id": 8,
-                    "name":"Thor: The Dark World",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTQyNzAwOTUxOF5BMl5BanBnXkFtZTcwMTE0OTc5OQ@@._V1_SX300.jpg"
-                },
-                {
-                    "id": 9,
-                    "name":"Captain America: The Winter Soldier",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMzA2NDkwODAwM15BMl5BanBnXkFtZTgwODk5MTgzMTE@._V1_SX300.jpg"
-                },
-                {
-                    "id": 10,
-                    "name":"Guardians of the Galaxy",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_SX300.jpg"
-                },
-                {
-                    "id": 11,
-                    "name":"Avengers: Age of Ultron",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg"
-                },
-                {
-                    "id": 12,
-                    "name":"Ant-Man",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_SX300.jpg"
-                },
-                {
-                    "id": 13,
-                    "name":"Captain America: Civil War",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_SX300.jpg"
-                },
-                {
-                    "id": 14,
-                    "name":"Doctor Strange",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg"
-                },
-                {
-                    "id": 15,
-                    "name":"Guardians of the Galaxy Vol. 2",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
-                },
-                {
-                    "id": 16,
-                    "name":"Spider-Man: Homecoming",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_SX300.jpg"
-                },
-                {
-                    "id": 17,
-                    "name":"Thor: Ragnarok",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_SX300.jpg"
-                },
-                {
-                    "id": 18,
-                    "name":"Black Panther",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg"
-                },
-                {
-                    "id": 19,
-                    "name":"Avengers: Infinity War",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
-                },
-                {
-                    "id": 20,
-                    "name":"Ant-Man and the Wasp",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BYjcyYTk0N2YtMzc4ZC00Y2E0LWFkNDgtNjE1MzZmMGE1YjY1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
-                },
-                {
-                    "id": 21,
-                    "name":"Captain Marvel",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SX300.jpg"
-                },
-                {
-                    "id": 22,
-                    "name":"Avengers: Endgame",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
-                },
-                {
-                    "id": 23,
-                    "name":"Spider-Man: Far from Home",
-                    "Poster":"https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg"
-                }
-            ],
-            list:[]
+            marvelMovieList: [{ "id": 1, "name": "Ant-Man" }, { "id": 2, "name": "Ant-Man and the Wasp" }, { "id": 3, "name": "Avengers: Age of Ultron" }, { "id": 4, "name": "Avengers: Endgame" }, { "id": 5, "name": "Avengers: Infinity War" }, { "id": 6, "name": "Black Panther" }, { "id": 7, "name": "Black Widow" }, { "id": 8, "name": "Blade" }, { "id": 9, "name": "Blade II" }, { "id": 10, "name": "Blade: Trinity" }, { "id": 11, "name": "Captain America" }, { "id": 12, "name": "Captain America" }, { "id": 13, "name": "Captain America: Civil War" }, { "id": 14, "name": "Captain America: The First Avenger" }, { "id": 15, "name": "Captain America: The Winter Soldier" }, { "id": 16, "name": "Captain Marvel" }, { "id": 17, "name": "Daredevil" }, { "id": 18, "name": "Dark Phoenix" }, { "id": 19, "name": "Deadpool" }, { "id": 20, "name": "Deadpool 2" }, { "id": 21, "name": "Doctor Strange" }, { "id": 22, "name": "Elektra" }, { "id": 23, "name": "Fantastic Four" }, { "id": 24, "name": "Fantastic Four" }, { "id": 25, "name": "Fantastic Four: Rise of the Silver Surfer" }, { "id": 26, "name": "Ghost Rider" }, { "id": 27, "name": "Ghost Rider: Spirit of Vengeance" }, { "id": 28, "name": "Guardians of the Galaxy" }, { "id": 29, "name": "Guardians of the Galaxy Vol. 2" }, { "id": 30, "name": "Howard the Duck" }, { "id": 31, "name": "Hulk" }, { "id": 32, "name": "Iron Man" }, { "id": 33, "name": "Iron Man 2" }, { "id": 34, "name": "Iron Man 3" }, { "id": 35, "name": "Logan" }, { "id": 36, "name": "Morbius" }, { "id": 37, "name": "Punisher: War Zone" }, { "id": 38, "name": "Shang-Chi and the Legend of the Ten Rings" }, { "id": 39, "name": "Spider-Man" }, { "id": 40, "name": "Spider-Man 2" }, { "id": 41, "name": "Spider-Man 3" }, { "id": 42, "name": "Spider-Man: Far From Home" }, { "id": 43, "name": "The Amazing Spider-Man" }, { "id": 44, "name": "The Amazing Spider-Man 2" }, { "id": 45, "name": "The Avengers" }, { "id": 46, "name": "The Eternals" }, { "id": 47, "name": "The Fantastic Four" }, { "id": 48, "name": "The Incredible Hulk" }, { "id": 49, "name": "The New Mutants" }, { "id": 50, "name": "The Punisher" }, { "id": 51, "name": "The Punisher" }, { "id": 52, "name": "The Wolverine" }, { "id": 53, "name": "Thor" }, { "id": 54, "name": "Thor: Ragnarok" }, { "id": 55, "name": "Thor: The Dark World" }, { "id": 56, "name": "Venom" }, { "id": 57, "name": "Venom: Let There Be Carnage" }, { "id": 58, "name": "X-Men" }, { "id": 59, "name": "X-Men Origins: Wolverine" }, { "id": 60, "name": "X-Men: Apocalypse" }, { "id": 61, "name": "X-Men: Days of Future Past" }, { "id": 62, "name": "X-Men: First Class" }, { "id": 63, "name": "X-Men: The Last Stand" }, { "id": 64, "name": "X2" }],
+            list: []
         }
         this.change = this.change.bind(this);
     }
 
+    onSelectDrpDwnItem = (drpDwnVal) => {
+        this.setState({
+            selectedValue: drpDwnVal.text,
+            list: []
+        });
+    }
+
     render() {
         return (
-            <main role="main" className="container mt-2">
+            <main role="main" className="container mt-5">
+                <span style={{ textAlign: "center" }}><h2>Search for Marvel movies.</h2></span>
                 <div className="my-3 p-3 bg-light rounded box-shadow">
                     <div className="media form-group pt-3">
-                        <input type="text" className="form-control input-lg media-body" id="searchBox"
-                            onChange={this.change} placeholder="Search"/>
+                        <input text="search"
+                            className="form-control input-lg media-body"
+                            id="searchBox"
+                            onChange={this.change}
+                            value={this.state.selectedValue}
+                        />
                     </div>
-                    <div id='searchResults'>
+                    <div className='continer' id='searchResults'>
                         {this.state.list.map((row) => (
-                            <ResultBox key={row.id} text={row.name} />
+                            <ResultBox key={row.id} text={row.name} onSelectDrpDwnItem={this.onSelectDrpDwnItem} />
                         ))}
                     </div>
+
                 </div>
             </main>
         );
     }
     change(evt) {
-        console.log(evt.target.value);
+        // console.log(evt.target.value);
         const searchString = evt.target.value
         const searchList = []
-        this.state.marvelMovieList.map((row) =>{
-            if(row.name.toLowerCase().includes(searchString.toLowerCase()) && searchString!==''
-            && searchString!=='-'){
-                if(searchList.length <= 10)
+        //Search the movie
+        this.state.marvelMovieList.map((row) => {
+            if (row.name.toLowerCase().includes(searchString.toLowerCase()) && searchString !== ''
+                && searchString !== '-') {
+                if (searchList.length <= 10)
                     searchList.push(row)
             }
             return searchList;
         })
         this.setState({
-            list:searchList
+            list: searchList
         })
     }
 }
