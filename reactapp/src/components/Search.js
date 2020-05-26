@@ -139,13 +139,14 @@ class Search extends Component {
     render() {
         var showing = this.state.showing;
         return (
-            <main role="main" className="container mt-5">
-                {/*<span style={{ textAlign: "center" }}><h2>Search for Marvel movies.</h2></span>*/}
-                <div className="my-3 p-3 bg-light rounded box-shadow">
+            <main role="main" className="container" style={{maxWidth: '900px', margin: '40px auto 0'}}>
+                <div className="p-3 bg-light rounded box-shadow" style={{minWidth: '500px', float: 'left', marginRight: '50px'}}>
+                    <h1>Marvel Movies</h1>
                     <div className="media form-group pt-3">
-                        <input text="search"
+                        <input type="text"
                             className="form-control input-lg media-body"
                             id="searchBox"
+                               placeholder="Search"
                             onChange={this.change}
                             value={this.state.selectedValue}
                         />

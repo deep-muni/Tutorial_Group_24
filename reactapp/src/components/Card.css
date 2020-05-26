@@ -1,0 +1,23 @@
+.movie{
+    width: 270px;
+    height: auto;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #F8F9FA;
+    margin-right: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.poster{
+    width: 240px;
+    border-radius: 10px;
+    height: 320px;
+}
+
+.title{
+    word-wrap: break-word;
+    font-size: 20px;
+    line-height: 25px;
+    height: 50px;
+}

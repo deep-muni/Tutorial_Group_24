@@ -1,22 +1,13 @@
 import React from "react";
+import './Card.css'
 
 export class Card extends React.Component{
 
     render() {
-        const imgStyle = {
-            width: '300px',
-            height:'300px',
-        };
-
-        const divStyle={
-            width: '300px'
-        }
         return (
-            <div className="card" style={divStyle}>
-                <img className="card-img-top" src={this.props.image} style={imgStyle} alt={""}/>
-                    <div className="card-body">
-                        <h3 className="card-title">{this.props.title_key}</h3>
-                    </div>
+            <div className="movie">
+                <img className="poster" src={this.props.image} alt={""}/>
+                <div className="title">{this.props.title_key}</div>
             </div>
         );
     }
