@@ -148,6 +148,7 @@ class Search extends Component {
                             id="searchBox"
                             onChange={this.change}
                             value={this.state.selectedValue}
+                            type= "search"
                         />
                     </div>
                     <div className='continer' id='searchResults'>
@@ -158,7 +159,7 @@ class Search extends Component {
                 </div>
                     {
                         showing?
-                            <div id={"moviecard"}>
+                            <div id={"moviecard"} style={{display: "inline-block"}}>
                                 <Card title_key={this.state.movie} image={this.state.image} />
                             </div>
                             :null

@@ -5,7 +5,7 @@ export class Card extends React.Component{
     render() {
         const imgStyle = {
             width: '300px',
-            height:'300px',
+            height:'300px'
         };
 
         const divStyle={
