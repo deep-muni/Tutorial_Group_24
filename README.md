@@ -11,3 +11,8 @@ Hardik Dudhrejia (B00835071)
 Pallavi Desai (B00837405)   
 Rashmika Ibrahimpatnam (B00832190)    
 Vikash Salvi (B00838174)  
+
+Guidelines for Group Members: 
+
+  1. Use a proper commit message format. Example (Tutorial #: < your message >)  
+  2. Do not use inline CSS while styling. Create a separate CSS file and import where you want to use.
