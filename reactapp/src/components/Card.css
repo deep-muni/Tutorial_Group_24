@@ -15,6 +15,12 @@
     height: 320px;
 }
 
+.poster:hover{
+    width: 280px;
+    border-radius: 10px;
+    height: 360px;
+}
+
 .title{
     word-wrap: break-word;
     font-size: 20px;

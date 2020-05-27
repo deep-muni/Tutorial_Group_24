@@ -143,6 +143,7 @@ class Search extends Component {
                 <div className="p-3 bg-light rounded box-shadow" style={{minWidth: '500px', float: 'left', marginRight: '50px'}}>
                     <h1>Marvel Movies</h1>
                     <div className="media form-group pt-3">
+                    <span class="glyphicon glyphicon-search"></span>
                         <input type="text"
                             className="form-control input-lg media-body"
                             id="searchBox"
