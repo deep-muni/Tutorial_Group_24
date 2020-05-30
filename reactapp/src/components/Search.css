@@ -1,5 +1,5 @@
 .searchBox{
-    width: 500px;
+    width: 600px;
     height: auto;
     padding: 0 20px 20px;
     background: #8f8f8f;
@@ -12,7 +12,7 @@ h2{
 }
 
 .userInput{
-    width: 460px;
+    width: 560px;
     height: 30px;
     font-size: 20px;
     padding: 20px 5px;
@@ -26,4 +26,11 @@ h2{
     border-radius: 0 0 5px 5px;
     padding: 5px 0;
     border: 2px solid #ffffff;
+    overflow-y: auto;
+    position: relative;
+    height: 500px;
 }
+
+::-webkit-scrollbar{height: 10px; width: 10px; background: #000;}
+
+::-webkit-scrollbar-thumb {background: #8f8f8f;}

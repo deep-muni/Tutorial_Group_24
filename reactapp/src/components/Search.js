@@ -43,7 +43,6 @@ class Search extends Component {
         if(sug.length > 0){
             userInput = {
                 borderRadius : '5px 5px 0 0',
-                borderBottomColor : '#8f8f8f',
                 boxShadow: 'inset 0 0 10px 4px #8f8f8f'
             }
         }else{
@@ -89,7 +88,7 @@ class Search extends Component {
                 <div>
                     {
                         this.state.selectedTup.map((tup, index) =>{
-                            return <Card key={tup.show_id} title={tup.title}  />
+                            return <Card key={index} title={tup.title}  />
                         })
                     }
                 </div>
