@@ -1,0 +1,15 @@
+.name{
+    margin-bottom: 5px;
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+.name:hover{
+    background-color: #8f8f8f;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.name:last-child{
+    margin-bottom: 0;
+}

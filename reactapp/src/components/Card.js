@@ -7,7 +7,7 @@ export class Card extends React.Component{
         return (
             <div className="movie">
                 <img className="poster" src={this.props.image} alt={""}/>
-                <div className="title">{this.props.title_key}</div>
+                <div className="title">{this.props.name}</div>
             </div>
         );
     }
