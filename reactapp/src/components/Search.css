@@ -19,6 +19,7 @@ h2{
     outline: none;
     border-radius: 5px;
     border: 2px solid #ffffff;
+    text-overflow: ellipsis;
 }
 
 .listWrapper{
@@ -28,7 +29,7 @@ h2{
     border: 2px solid #ffffff;
     overflow-y: auto;
     position: relative;
-    height: 500px;
+    max-height: 350px;
 }
 
 ::-webkit-scrollbar{height: 10px; width: 10px; background: #000;}
