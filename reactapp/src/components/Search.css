@@ -13,9 +13,9 @@ h2{
 
 .userInput{
     width: 560px;
-    height: 30px;
+    height: 40px;
     font-size: 20px;
-    padding: 20px 5px;
+    padding: 10px 5px;
     outline: none;
     border-radius: 5px;
     border: 2px solid #ffffff;
