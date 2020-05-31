@@ -5,7 +5,7 @@ class Suggestions extends Component{
 
     render() {
         return (
-            <p className="name" onClick={this.props.onClick}>{this.props.name}</p>
+            <p className="name" onClick={this.props.onClick}>{this.props.title}</p>
         );
     }
 }
