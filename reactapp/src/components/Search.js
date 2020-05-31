@@ -11,7 +11,6 @@ class Search extends Component {
     super(props);
     this.state = {
       MovieList: [],
-      suggestion: [],
       selectedTup: [],
       userI: "",
     };
@@ -32,6 +31,9 @@ class Search extends Component {
       userI: userInp,
     });
     if (userInp.length > 0) {
+      this.setState({
+        selectedTup: [],
+      });
       this.dataRequest(
         "https://api-tutorial4.herokuapp.com/movies?title_like=.*" + userInp
       );
@@ -57,7 +59,7 @@ class Search extends Component {
           return (
             <Suggestions
               onClick={this.sugClick}
-              key={tup.show_id}
+              key={index}
               title={tup.title}
             />
           );
@@ -81,7 +83,7 @@ class Search extends Component {
   }
 
   showCard() {
-    if (this.state.suggestion.length === 0 && this.state.userI.length > 0) {
+    if (this.state.userI.length > 0 && this.state.selectedTup.length > 0) {
       return (
         <div>
           {this.state.selectedTup.map((tup, index) => {
