@@ -11,7 +11,7 @@
 }
 
 .name:hover{
-    background-color: #8f8f8f;
+    background-color: darkcyan;
     color: #ffffff;
     cursor: pointer;
 }

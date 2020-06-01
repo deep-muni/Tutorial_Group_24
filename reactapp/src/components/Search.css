@@ -1,14 +1,22 @@
-.searchBox{
-    width: 600px;
-    height: auto;
-    padding: 0 20px 20px;
-    background: #8f8f8f;
-    margin: 5px auto 0;
+.wrapper{
+    background-color: darkcyan;
 }
 
-h2{
+.searchBox{
+    height: auto;
+    padding: 0 20px 20px;
+    background: #0c5460;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.header{
     text-align: center;
     color: #ffffff;
+    font-family: "Lucida Calligraphy", serif;
+    margin-bottom: 5px;
+    font-size: 30px;
 }
 
 .userInput{
@@ -23,6 +31,7 @@ h2{
 }
 
 .listWrapper{
+    width: 556px;
     background-color: #ffffff;
     border-radius: 0 0 5px 5px;
     padding: 5px 0;
@@ -30,8 +39,17 @@ h2{
     overflow-y: auto;
     position: relative;
     max-height: 350px;
+    margin: 0 auto;
 }
 
-::-webkit-scrollbar{height: 10px; width: 10px; background: #000;}
+::-webkit-scrollbar{height: 10px; width: 10px; background: #0c5460;}
 
-::-webkit-scrollbar-thumb {background: #8f8f8f;}
+::-webkit-scrollbar-thumb {background: #ffffff; border: 1px solid #0c5460}
+
+.card-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #0c5460;
+    border-radius: 10px;
+}

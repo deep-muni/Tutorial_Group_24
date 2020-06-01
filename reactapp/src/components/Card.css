@@ -1,32 +1,23 @@
 .movie{
     width: 350px;
-    height: auto;
-    padding: 15px;
+    height: 75px;
     border-radius: 10px;
     background-color: #F8F9FA;
-    margin: 50px auto;
+    margin: 20px auto;
     overflow: hidden;
     text-align: center;
-}
-
-.poster{
-    width: 240px;
-    border-radius: 10px;
-    height: 320px;
-}
-
-.title{
+    padding: 0 10px;
     word-wrap: break-word;
     font-size: 20px;
     color: black;
-    line-height: 25px;
+    line-height: 75px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .movie:hover{
-    background-color: #8f8f8f;
+    background-color: darkcyan;
     cursor: pointer;
-}
-
-.movie:hover .title{
     color: white;
 }
