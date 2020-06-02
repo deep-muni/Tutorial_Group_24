@@ -2,7 +2,7 @@
     height: auto;
     width: 600px;
     padding: 30px;
-    background-color: #0c5460;
+    background-color: black;
     border-radius: 10px;
     margin: 0 auto;
 }
@@ -15,7 +15,7 @@ h1{
 }
 
 .spec-movie span{
-    color: black;
+    color: white;
     font-size: 23px;
     font-weight: 700;
     text-decoration: underline;
@@ -36,7 +36,7 @@ h1{
 }
 
 .back{
-    background: #0c5460 url("back.png") center center no-repeat;
+    background: black url("back.png") center center no-repeat;
     height: 36px;
     width: 36px;
     border-radius: 36px;
