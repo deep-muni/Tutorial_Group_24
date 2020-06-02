@@ -1,0 +1,51 @@
+.spec-movie{
+    height: auto;
+    width: 600px;
+    padding: 30px;
+    background-color: #0c5460;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    color: #ffffff;
+    font-family: "Lucida Console", serif;
+    margin-bottom: 10px;
+}
+
+.spec-movie span{
+    color: black;
+    font-size: 23px;
+    font-weight: 700;
+    text-decoration: underline;
+    font-family: "Lucida Console", serif;
+    display: block;
+}
+
+.spec-movie p{
+    color: white;
+    font-size: 25px;
+    font-family: "Lucida Console", serif;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.spec-movie p:last-child{
+    margin-bottom: 0;
+}
+
+.back{
+    background: #0c5460 url("back.png") center center no-repeat;
+    height: 36px;
+    width: 36px;
+    border-radius: 36px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.back:hover{
+    background: #000000 url("back.png") center center no-repeat;
+    cursor: pointer;
+}

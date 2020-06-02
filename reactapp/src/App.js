@@ -1,10 +1,13 @@
 import React from 'react';
-import Search from "./components/Search";
+import Routes from "./components/Routes";
+import {BrowserRouter as Router} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-        <Search />
+        <Router>
+            <Routes />
+        </Router>
     </div>
   );
 }
