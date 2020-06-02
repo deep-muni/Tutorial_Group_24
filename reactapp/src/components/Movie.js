@@ -32,8 +32,10 @@ class Movie extends Component {
                     <p>{this.state.movie.description}</p>
                     <span>Release Year:</span>
                     <p>{this.state.movie.release_year}</p>
-                    {/*<span>Duration:</span>*/}
-                    {/*<p>{this.state.movie.duration}</p>*/}
+                    <span>Duration:</span>
+                    <p>{this.state.movie.duration}</p>
+                    <span>Cast:</span>
+                    <p>{this.state.movie.cast}</p>
                 </div>
             </div>
         );
