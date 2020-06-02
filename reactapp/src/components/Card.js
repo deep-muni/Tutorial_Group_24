@@ -1,16 +1,16 @@
 import React from "react";
 import './Card.css'
+import {withRouter} from "react-router-dom";
 
-export class Card extends React.Component{
+export class Card extends React.Component {
 
     render() {
         return (
-            <div className="movie">
-                <img className="poster" src={this.props.image} alt={""}/>
-                <div className="title">{this.props.title_key}</div>
-            </div>
+            <p className="movie" onClick={() => this.props.history.push('/movie', {'id': this.props.show_id})}>
+                {this.props.title}
+            </p>
         );
     }
 }
 
-export default Card;
+export default withRouter(Card);

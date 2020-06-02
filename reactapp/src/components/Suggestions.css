@@ -1,0 +1,21 @@
+.name{
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 30px;
+    overflow: hidden;
+    height: 30px;
+    padding: 0 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.name:hover{
+    background-color: darkcyan;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.name:last-child{
+    margin-bottom: 0;
+}
