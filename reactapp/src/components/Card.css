@@ -17,7 +17,7 @@
 }
 
 .movie:hover{
-    background-color: darkcyan;
+    background-color: gray;
     cursor: pointer;
     color: white;
 }
