@@ -19,7 +19,7 @@ class AddUser extends Component {
 
         let res = '';
 
-        const url = "http://localhost:5000/user/addUser/";
+        const url = "https://tutorial-group-24.herokuapp.com/user/addUser/";
         await Axios.post(url, {
             bid: document.getElementById("banner").value,
             name: document.getElementById("name").value,
