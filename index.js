@@ -19,6 +19,6 @@ app.get('/*',function(req,res, next){
 
 app.use('/user', router);
 
-app.listen(process.env.PORT || 5000, function () {
+app.listen(5000 || process.env.PORT, function () {
     console.log('started');
 });

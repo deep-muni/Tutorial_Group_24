@@ -25,16 +25,20 @@ class ShowSpecUser extends Component {
     show(){
         return (
             <table>
-                <tr>
-                    <th>Banner ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                </tr>
-                <tr>
-                    <td>{this.state.users.bid}</td>
-                    <td>{this.state.users.name}</td>
-                    <td>{this.state.users.email}</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Banner ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{this.state.users.bid}</td>
+                        <td>{this.state.users.name}</td>
+                        <td>{this.state.users.email}</td>
+                    </tr>
+                </tbody>
             </table>
         );
     }

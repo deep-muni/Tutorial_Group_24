@@ -22,3 +22,7 @@
 .buttonBar:active{
     transform: translate(2px, 2px);
 }
+
+.active{
+    color: #00ff00;
+}

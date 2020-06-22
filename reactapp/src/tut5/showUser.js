@@ -23,15 +23,18 @@ class ShowUser extends Component {
     show(){
         return (
             <table>
-                <tr>
-                    <th>Banner ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Banner ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
                 {
                     this.state.users.map((tup, index) => {
                         return(
-                          <tr>
+                          <tr key={index}>
                               <td>{tup.bid}</td>
                               <td>{tup.name}</td>
                               <td>{tup.email}</td>
@@ -39,6 +42,7 @@ class ShowUser extends Component {
                         );
                     })
                 }
+                </tbody>
             </table>
         );
     }

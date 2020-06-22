@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import Axios from "axios";
-import './table.css';
 
-class AddUser extends Component {
+class UpdateUser extends Component {
 
     constructor(props) {
         super(props);
@@ -11,16 +10,16 @@ class AddUser extends Component {
             msg: ''
         }
 
-        this.addUser = this.addUser.bind(this);
+        this.updateUser = this.updateUser.bind(this);
 
     }
 
-    async addUser(){
+    async updateUser(){
 
         let res = '';
 
-        const url = "http://localhost:5000/user/addUser/";
-        await Axios.post(url, {
+        const url = "http://localhost:5000/user/modifyUser/";
+        await Axios.put(url, {
             bid: document.getElementById("banner").value,
             name: document.getElementById("name").value,
             email: document.getElementById("email").value
@@ -41,12 +40,11 @@ class AddUser extends Component {
                 <input type="text" id="banner" placeholder="Enter Banner ID"/>
                 <input type="text" id="name" placeholder="Enter Name"/>
                 <input type="text" id="email" placeholder="Enter Email"/>
-                <button className="addUser" onClick={this.addUser}>Submit</button>
+                <button className="updateUser" onClick={this.updateUser}>Submit</button>
                 <p className="msg">{this.state.msg}</p>
             </div>
         );
     }
 }
 
-export default AddUser;
-
+export default UpdateUser;
