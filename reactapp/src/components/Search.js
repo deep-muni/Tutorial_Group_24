@@ -27,7 +27,7 @@ class Search extends Component {
         this.setState({AllMovies});
     }
 
-    async dataRequest(url) {
+    async getData(url) {
         const {data: MovieList} = await Axios.get(url);
         this.setState({MovieList});
     }
@@ -41,7 +41,7 @@ class Search extends Component {
             this.setState({
                 selectedTup: [],
             });
-            this.dataRequest(
+            this.getData(
                 "https://api-tutorial4.herokuapp.com/movies?title_like=.*" + userInp
             );
             userInput = {
