@@ -25,9 +25,9 @@ const users = [
         email: "dal.ca"
     },
     {
-        bid: "B00838174",
+        bid: "B00838074",
         name: "Vikash Salvi",
-        email: "dal.ca"
+        email: "vikash.salvi@dal.ca"
     }
 ]
 module.exports = users;
