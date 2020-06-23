@@ -30,5 +30,4 @@ const users = [
         email: "dal.ca"
     }
 ]
-
 module.exports = users;
