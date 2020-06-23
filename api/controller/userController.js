@@ -12,7 +12,7 @@ const addUser = (value) => {
         return {status: false, message: 'User already exist'};
     }else{
         userList.push(value);
-        return {status: true, message: 'User added to list'};
+        return {status: true, message: 'User is added to the list'};
     }
 }
 
@@ -21,7 +21,7 @@ const modifyUser = (value) => {
     if(user){
         user.name = value.name;
         user.email = value.email;
-        return {status: true, message: 'User Modified'};
+        return {status: true, message: 'User Data is Modified'};
     }else{
         return {status: false, message: 'User does not exist'};
     }

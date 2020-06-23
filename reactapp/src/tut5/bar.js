@@ -65,7 +65,7 @@ class Bar extends Component {
                 <button className={this.state.active_2 ? 'buttonBar active' : 'buttonBar'} id="active_2"
                         onClick={this.selectButton}>Specific User</button>
                 <button className={this.state.active_3 ? 'buttonBar active' : 'buttonBar'} id="active_3"
-                        onClick={this.selectButton}>Add User</button>
+                        onClick={this.selectButton}>Insert User</button>
                 <button className={this.state.active_4 ? 'buttonBar active' : 'buttonBar'} id="active_4"
                         onClick={this.selectButton}>Modify User</button>
             </div>

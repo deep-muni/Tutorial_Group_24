@@ -2,7 +2,7 @@ const users = [
     {
         bid: "B00838511",
         name: "Bharat Bhargava",
-        email: "@dal.ca"
+        email: "bharat.bhargava@dal.ca"
     },
     {
         bid: "B00828375",
@@ -11,24 +11,23 @@ const users = [
     },
     {
         bid: "B00835071",
-        name: "Hardik Dudhrejia",
-        email: "@dal.ca"
+        name: "Dudhrejia Hardik",
+        email: "hr208032@dal.ca"
     },
     {
         bid: "B00837405",
         name: "Pallavi Desai",
-        email: "@dal.ca"
+        email: "pl561741@dal.ca"
     },
     {
         bid: "B00832190",
         name: "Rashmika Ibrahimpatnam",
-        email: "dal.ca"
+        email: "rs369167@dal.ca"
     },
     {
-        bid: "B00838174",
+        bid: "B00838074",
         name: "Vikash Salvi",
-        email: "dal.ca"
+        email: "vikash.salvi@dal.ca"
     }
 ]
-
 module.exports = users;
