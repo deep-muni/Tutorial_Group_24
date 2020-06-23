@@ -11,7 +11,7 @@ const users = [
     },
     {
         bid: "B00835071",
-        name: "Hardik Dudhrejia",
+        name: "Dudhrejia Hardik",
         email: "hr208032@dal.ca"
     },
     {
