@@ -17,7 +17,7 @@ const users = [
     {
         bid: "B00837405",
         name: "Pallavi Desai",
-        email: "@dal.ca"
+        email: "pl561741@dal.ca"
     },
     {
         bid: "B00832190",
