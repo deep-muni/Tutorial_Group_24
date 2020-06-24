@@ -22,7 +22,7 @@ const users = [
     {
         bid: "B00832190",
         name: "Rashmika Ibrahimpatnam",
-        email: "dal.ca"
+        email: "rs369167@dal.ca"
     },
     {
         bid: "B00838074",
