@@ -18,7 +18,7 @@ class UpdateUser extends Component {
 
         let res = '';
 
-        const url = "https://tutorial-group-24.herokuapp.com/user/modifyUser/";
+        const url = "http://localhost:5000/user/modifyUser/";
         await Axios.put(url, {
             bid: document.getElementById("banner").value,
             name: document.getElementById("name").value,

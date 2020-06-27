@@ -1,32 +1,35 @@
-const userList = require('../model/users');
+const userModel = require("../model/users");
 
-const searchUser = (key, value) => {
-    return userList.find(user => {
-        return user[key] === value;
-    });
+const getAllUsers = (req, res) => {
+    userModel.find().exec()
+        .then(data => {
+            res.status(200).json(data);
+        })
+        .catch(err => {
+            console.log("Failure:" + err);
+        })
 }
 
-const addUser = (value) => {
-    const user = searchUser('bid', value.bid);
-    if(user){
-        return {status: false, message: 'User already exist'};
-    }else{
-        userList.push(value);
-        return {status: true, message: 'User is added to the list'};
-    }
+const searchUser = (req, res) => {
+    userModel.find({bid: req.params.bid}).exec()
+        .then(data => {
+            res.status(200).json(data);
+        })
+        .catch(err => {
+            console.log("Failure:" + err);
+        })
 }
 
-const modifyUser = (value) => {
-    const user = searchUser('bid', value.bid);
-    if(user){
-        user.name = value.name;
-        user.email = value.email;
-        return {status: true, message: 'User Data is Modified'};
-    }else{
-        return {status: false, message: 'User does not exist'};
-    }
+const addUser = (req, res) => {
+
 }
 
+const modifyUser = (req, res) => {
+
+}
+
+
+module.exports.getAllUsers = getAllUsers;
 module.exports.searchUser = searchUser;
 module.exports.addUser = addUser;
 module.exports.modifyUser = modifyUser;
