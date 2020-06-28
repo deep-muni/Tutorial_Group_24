@@ -16,9 +16,9 @@ class UpdateUser extends Component {
 
     async updateUser() {
 
-        if(document.getElementById("banner").value === "" ||
+        if (document.getElementById("banner").value === "" ||
             document.getElementById("name").value === "" ||
-            document.getElementById("email").value === ""){
+            document.getElementById("email").value === "") {
             alert("Please fill the fields");
             return;
         }

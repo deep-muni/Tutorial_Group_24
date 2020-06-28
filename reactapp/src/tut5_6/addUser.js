@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 import './table.css';
 
@@ -15,11 +15,11 @@ class AddUser extends Component {
 
     }
 
-    async addUser(){
+    async addUser() {
 
-        if(document.getElementById("banner").value === "" ||
+        if (document.getElementById("banner").value === "" ||
             document.getElementById("name").value === "" ||
-            document.getElementById("email").value === ""){
+            document.getElementById("email").value === "") {
             alert("Please fill the fields");
             return;
         }
@@ -45,9 +45,9 @@ class AddUser extends Component {
     render() {
         return (
             <div>
-                <input type="text" id="banner" placeholder="Enter Banner ID"/>
-                <input type="text" id="name" placeholder="Enter Name"/>
-                <input type="text" id="email" placeholder="Enter Email"/>
+                <input type="text" id="banner" placeholder="Enter Banner ID" />
+                <input type="text" id="name" placeholder="Enter Name" />
+                <input type="text" id="email" placeholder="Enter Email" />
                 <button className="addUser" onClick={this.addUser}>Add</button>
                 <p className="msg">{this.state.msg}</p>
             </div>

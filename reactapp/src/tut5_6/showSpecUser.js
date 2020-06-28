@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 import './table.css';
 
@@ -13,9 +13,9 @@ class ShowSpecUser extends Component {
         this.getUser = this.getUser.bind(this);
     }
 
-    async getUser(){
+    async getUser() {
 
-        if(document.getElementById("banner").value === ""){
+        if (document.getElementById("banner").value === "") {
             alert("Please fill the field");
             return;
         }
@@ -27,10 +27,10 @@ class ShowSpecUser extends Component {
         })
     }
 
-    show(){
-        if(this.state.users === undefined){
+    show() {
+        if (this.state.users === undefined) {
             return null;
-        }else{
+        } else {
             return (
                 <tr>
                     <td>{this.state.users.bid}</td>
@@ -45,17 +45,17 @@ class ShowSpecUser extends Component {
         return (
             <div>
                 <div className="gap">
-                    <input type="text" id="banner" placeholder="Enter Banner ID"/>
+                    <input type="text" id="banner" placeholder="Enter Banner ID" />
                     <button className="searchUser" onClick={this.getUser}>Search</button>
                 </div>
                 <table>
                     <thead>
-                    <tr>
-                        <th>Banner ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                    </tr>
-                    {this.show()}
+                        <tr>
+                            <th>Banner ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                        {this.show()}
                     </thead>
                     <tbody>
                     </tbody>

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 import './table.css';
 
@@ -12,7 +12,7 @@ class ShowUser extends Component {
         }
     }
 
-    async componentDidMount(){
+    async componentDidMount() {
         const url = "http://localhost:5000/user";
         const data = await Axios.get(url);
         this.setState({
@@ -20,7 +20,7 @@ class ShowUser extends Component {
         })
     }
 
-    show(){
+    show() {
         return (
             <table>
                 <thead>
@@ -31,17 +31,17 @@ class ShowUser extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                {
-                    this.state.users.map((tup, index) => {
-                        return(
-                          <tr key={index}>
-                              <td>{tup.bid}</td>
-                              <td>{tup.name}</td>
-                              <td>{tup.email}</td>
-                          </tr>
-                        );
-                    })
-                }
+                    {
+                        this.state.users.map((tup, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{tup.bid}</td>
+                                    <td>{tup.name}</td>
+                                    <td>{tup.email}</td>
+                                </tr>
+                            );
+                        })
+                    }
                 </tbody>
             </table>
         );
