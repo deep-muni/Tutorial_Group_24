@@ -17,6 +17,13 @@ class AddUser extends Component {
 
     async addUser(){
 
+        if(document.getElementById("banner").value === "" ||
+            document.getElementById("name").value === "" ||
+            document.getElementById("email").value === ""){
+            alert("Please fill the fields");
+            return;
+        }
+
         let res = '';
 
         const url = "http://localhost:5000/user/addUser/";
@@ -41,7 +48,7 @@ class AddUser extends Component {
                 <input type="text" id="banner" placeholder="Enter Banner ID"/>
                 <input type="text" id="name" placeholder="Enter Name"/>
                 <input type="text" id="email" placeholder="Enter Email"/>
-                <button className="addUser" onClick={this.addUser}>Submit</button>
+                <button className="addUser" onClick={this.addUser}>Add</button>
                 <p className="msg">{this.state.msg}</p>
             </div>
         );

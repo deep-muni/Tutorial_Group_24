@@ -14,6 +14,12 @@ class ShowSpecUser extends Component {
     }
 
     async getUser(){
+
+        if(document.getElementById("banner").value === ""){
+            alert("Please fill the field");
+            return;
+        }
+
         const url = "http://localhost:5000/user/specUser/" + document.getElementById("banner").value;
         const data = await Axios.get(url);
         this.setState({
@@ -40,7 +46,7 @@ class ShowSpecUser extends Component {
             <div>
                 <div className="gap">
                     <input type="text" id="banner" placeholder="Enter Banner ID"/>
-                    <button className="searchUser" onClick={this.getUser}>Submit</button>
+                    <button className="searchUser" onClick={this.getUser}>Search</button>
                 </div>
                 <table>
                     <thead>

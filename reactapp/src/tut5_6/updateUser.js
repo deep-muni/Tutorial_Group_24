@@ -16,6 +16,13 @@ class UpdateUser extends Component {
 
     async updateUser() {
 
+        if(document.getElementById("banner").value === "" ||
+            document.getElementById("name").value === "" ||
+            document.getElementById("email").value === ""){
+            alert("Please fill the fields");
+            return;
+        }
+
         let res = '';
 
         const url = "http://localhost:5000/user/modifyUser/" + document.getElementById("banner").value;
@@ -32,6 +39,9 @@ class UpdateUser extends Component {
             msg: res.data.message
         })
 
+        document.getElementById("banner").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
     }
 
     render() {
@@ -40,7 +50,7 @@ class UpdateUser extends Component {
                 <input type="text" id="banner" placeholder="Enter Banner ID" />
                 <input type="text" id="name" placeholder="Enter Name" />
                 <input type="text" id="email" placeholder="Enter Email" />
-                <button className="updateUser" onClick={this.updateUser}>Submit</button>
+                <button className="updateUser" onClick={this.updateUser}>Update</button>
                 <p className="msg">{this.state.msg}</p>
             </div>
         );

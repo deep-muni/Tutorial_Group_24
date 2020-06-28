@@ -3,7 +3,7 @@ const userModel = require("../model/users");
 const getAllUsers = (req, res) => {
     userModel.find().exec()
         .then(data => {
-            res.status(200).json(data);
+            res.json(data);
         })
         .catch(err => {
             console.log("Failure:" + err);
@@ -14,7 +14,7 @@ const searchUser = (req, res) => {
     userModel.find({ bid: req.params.bid }).exec()
         .then(data => {
             console.log(data)
-            res.status(200).json(data);
+            res.json(data);
 
         })
         .catch(err => {
@@ -23,26 +23,43 @@ const searchUser = (req, res) => {
 }
 
 const addUser = (req, res) => {
-
-}
-
-const modifyUser = (req, res) => {
-    userModel.find({ bid: req.params.bid }).exec()
-        .then(userdata => {
-            userModel.updateOne({ name: req.body.name, email: req.body.email }).exec()
-                .then(data => {
-                    res.status(200).json(data);
-                })
-                .catch(err => {
-                    console.log("Failure in modifying the data:" + err);
-                })
+    userModel.find({ bid: req.body.bid }).exec()
+        .then(result => {
+            if(result.length > 0){
+                res.json({message: "User already exist"});
+            }else{
+                userModel.insert({bid: req.body.bid, name: req.body.name, email: req.body.email}).exec()
+                    .then(data => {
+                        res.json({message: "User Added"});
+                    })
+                    .catch(err => {
+                        console.log("Failure in adding the data:" + err);
+                    })
+            }
         })
         .catch(err => {
             console.log("Failure in fetching the data:" + err);
         })
+}
 
-
-
+const modifyUser = (req, res) => {
+    userModel.find({ bid: req.params.bid }).exec()
+        .then(result => {
+            if(result.length === 0){
+                res.json({message: "User does not exist"});
+            }else{
+                userModel.updateOne({ name: req.body.name, email: req.body.email }).exec()
+                    .then(data => {
+                        res.json({message: "User modified"});
+                    })
+                    .catch(err => {
+                        console.log("Failure in modifying the data:" + err);
+                    })
+            }
+        })
+        .catch(err => {
+            console.log("Failure in fetching the data:" + err);
+        })
 }
 
 
