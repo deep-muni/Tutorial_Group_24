@@ -24,7 +24,7 @@ const addUser = (req, res) => {
     userModel.find({ bid: req.body.bid }).exec()
         .then(result => {
             if (result.length > 0) {
-                res.json({ Status:"Success", message: "User already exist" });
+                res.json({ Status:"Success", message: "The user already exist" });
             } else {
                 const newUser = new userModel({bid: req.body.bid, name: req.body.name, email: req.body.email })
                 newUser.save()
@@ -33,12 +33,12 @@ const addUser = (req, res) => {
                     })
                     .catch(err => {
                         res.json({Status:"Failure", message: err});
-                        console.log("Failure in adding the data:" + err);
+                        console.log("Error while adding the data:" + err);
                     })
             }
         })
         .catch(err => {
-            console.log("Failure in fetching the data:" + err);
+            console.log("Error fetching the data:" + err);
         })
 }
 
@@ -46,7 +46,7 @@ const modifyUser = (req, res) => {
     userModel.find({ bid: req.params.bid }).exec()
         .then(result => {
             if (result.length === 0) {
-                res.json({Status:"Success", message: "User does not exist" });
+                res.json({Status:"Success", message: "The user does not exist in the database" });
             } else {
                 userModel.updateOne({ bid: req.params.bid }, { $set: { name: req.body.name, email: req.body.email }}).exec()
                     .then(data => {
@@ -58,7 +58,7 @@ const modifyUser = (req, res) => {
             }
         })
         .catch(err => {
-            console.log("Failure in fetching the data:" + err);
+            console.log("Error in fetching the data:" + err);
         })
 }
 
