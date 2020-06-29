@@ -20,19 +20,26 @@ class AddUser extends Component {
         let res = '';
 
         const url = "https://tutorial-group-24.herokuapp.com/user/addUser/";
-        await Axios.post(url, {
+        // const url = "http://localhost:5000/user/addUser/";
+        await Axios.post(url,{
             bid: document.getElementById("banner").value,
             name: document.getElementById("name").value,
             email: document.getElementById("email").value
         })
             .then(function (response) {
-                res = response;
+                    res = response;
+            }).catch(err => {
+                console.log("Failure:" + err);
             })
+            if(res.data.Status === "Success"){
+                this.setState({
+                    msg: res.data.message
+                })
+            }
 
-        this.setState({
-            msg: res.data.message
-        })
-
+        document.getElementById("banner").value = "" ;
+        document.getElementById("name").value = "" ;
+        document.getElementById("email").value = "";
     }
 
     render() {

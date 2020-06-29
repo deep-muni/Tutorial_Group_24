@@ -14,13 +14,15 @@ class ShowUser extends Component {
 
     async componentDidMount(){
         const url = "https://tutorial-group-24.herokuapp.com/user";
-        const data = await Axios.get(url);
-        this.setState({
-            users: data.data
-        })
+        // const url = "http://localhost:5000/user";
+        const response = await Axios.get(url);
+        if(response.data.Status === "Success"){
+            this.setState({
+                users: response.data.data
+            })
+        }
     }
-
-    show(){
+    show() {
         return (
             <table>
                 <thead>

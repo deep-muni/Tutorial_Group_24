@@ -18,20 +18,26 @@ class UpdateUser extends Component {
 
         let res = '';
 
-        const url = "https://tutorial-group-24.herokuapp.com/user/modifyUser/";
+        const url = "https://tutorial-group-24.herokuapp.com/user/modifyUser/" + document.getElementById("banner").value;
+        // const url = "http://localhost:5000/user/modifyUser/" + document.getElementById("banner").value;
+
         await Axios.put(url, {
             bid: document.getElementById("banner").value,
             name: document.getElementById("name").value,
             email: document.getElementById("email").value
         })
             .then(function (response) {
-                res = response;
+                    res= response;
             })
 
+        if(res.data.Status === "Success"){
         this.setState({
             msg: res.data.message
         })
-
+    }
+        document.getElementById("banner").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
     }
 
     render() {
