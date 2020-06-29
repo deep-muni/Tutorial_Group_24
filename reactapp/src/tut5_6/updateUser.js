@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 
 class UpdateUser extends Component {
@@ -14,11 +14,11 @@ class UpdateUser extends Component {
 
     }
 
-    async updateUser(){
+    async updateUser() {
 
         let res = '';
 
-        const url = "http://localhost:5000/user/modifyUser/";
+        const url = "http://localhost:5000/user/modifyUser/" + document.getElementById("banner").value;
         await Axios.put(url, {
             bid: document.getElementById("banner").value,
             name: document.getElementById("name").value,
@@ -37,9 +37,9 @@ class UpdateUser extends Component {
     render() {
         return (
             <div>
-                <input type="text" id="banner" placeholder="Enter Banner ID"/>
-                <input type="text" id="name" placeholder="Enter Name"/>
-                <input type="text" id="email" placeholder="Enter Email"/>
+                <input type="text" id="banner" placeholder="Enter Banner ID" />
+                <input type="text" id="name" placeholder="Enter Name" />
+                <input type="text" id="email" placeholder="Enter Email" />
                 <button className="updateUser" onClick={this.updateUser}>Submit</button>
                 <p className="msg">{this.state.msg}</p>
             </div>

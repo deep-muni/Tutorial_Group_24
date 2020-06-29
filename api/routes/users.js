@@ -8,6 +8,6 @@ router.get('/specUser/:bid', method.searchUser);
 
 router.post('/addUser', method.addUser);
 
-router.put('/modifyUser', method.modifyUser);
+router.put('/modifyUser/:bid', method.modifyUser);
 
 module.exports = router;
