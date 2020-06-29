@@ -14,7 +14,7 @@ table th {
     padding-bottom: 12px;
     padding-left: 8px;
     text-align: left;
-    background-color: #0073B1;
+    background-color: #5e4f96;
     color: white;
     font-size: 20px;
 }
@@ -40,10 +40,10 @@ table td{
 .searchUser, .addUser, .updateUser{
     width: 200px;
     height: 35px;
-    background: #0073B1;
+    background: #5e4f96;
     border-radius: 5px;
     margin-right: 10px;
-    border: 1px solid #0073B1;
+    border: 1px solid #5e4f96;
     font-family: Arial, serif;
     font-size: 25px;
     color: white;
