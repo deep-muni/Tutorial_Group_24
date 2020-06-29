@@ -1,4 +1,6 @@
 const userModel = require("../model/users");
+const mongoose = require('mongoose');
+
 
 const getAllUsers = (req, res) => {
     userModel.find().exec()
@@ -25,12 +27,14 @@ const searchUser = (req, res) => {
 const addUser = (req, res) => {
     userModel.find({ bid: req.body.bid }).exec()
         .then(result => {
-            if(result.length > 0){
-                res.json({message: "User already exist"});
-            }else{
-                userModel.insert({bid: req.body.bid, name: req.body.name, email: req.body.email}).exec()
+            if (result.length > 0) {
+                res.json({ message: "User already exist" });
+            } else {
+                const newuser = new userModel({ _id: new mongoose.Types.ObjectId(), bid: req.body.bid, name: req.body.name, email: req.body.email })
+                newuser.save()
+
                     .then(data => {
-                        res.json({message: "User Added"});
+                        res.json({ message: "User Added" });
                     })
                     .catch(err => {
                         console.log("Failure in adding the data:" + err);
@@ -45,17 +49,18 @@ const addUser = (req, res) => {
 const modifyUser = (req, res) => {
     userModel.find({ bid: req.params.bid }).exec()
         .then(result => {
-            if(result.length === 0){
-                res.json({message: "User does not exist"});
-            }else{
-                userModel.updateOne({ name: req.body.name, email: req.body.email }).exec()
+            if (result.length === 0) {
+                res.json({ message: "User does not exist" });
+            } else {
+                userModel.updateOne({ bid: req.params.bid }, { $set: { name: req.body.name, email: req.body.email }}).exec()
                     .then(data => {
-                        res.json({message: "User modified"});
+                        res.json({ message: "User modified" });
                     })
                     .catch(err => {
                         console.log("Failure in modifying the data:" + err);
                     })
             }
+            
         })
         .catch(err => {
             console.log("Failure in fetching the data:" + err);
