@@ -31,14 +31,15 @@ class UpdateUser extends Component {
             name: document.getElementById("name").value,
             email: document.getElementById("email").value
         })
-            .then(function (response) {
-                res = response;
+            .then(function (response) {               
+                    res= response;
             })
-
+        
+        if(res.data.Status === "Success"){
         this.setState({
             msg: res.data.message
         })
-
+    }
         document.getElementById("banner").value = "";
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";

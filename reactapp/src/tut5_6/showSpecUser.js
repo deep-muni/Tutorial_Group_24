@@ -21,10 +21,12 @@ class ShowSpecUser extends Component {
         }
 
         const url = "http://localhost:5000/user/specUser/" + document.getElementById("banner").value;
-        const data = await Axios.get(url);
-        this.setState({
-            users: data.data[0]
-        })
+        const response = await Axios.get(url);
+        if(response.data.Status === "Success"){
+            this.setState({
+                users: response.data.data[0]
+            })
+        }  
     }
 
     show(){

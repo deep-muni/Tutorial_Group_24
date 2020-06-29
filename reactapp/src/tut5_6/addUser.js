@@ -33,12 +33,15 @@ class AddUser extends Component {
             email: document.getElementById("email").value
         })
             .then(function (response) {
-                res = response;
+                    res = response;
+            }). catch(err => {
+                console.log("Failure:" + err);
             })
-
-        this.setState({
-            msg: res.data.message
-        })
+            if(res.data.Status === "Success"){
+                this.setState({
+                    msg: res.data.message
+                })
+            }
 
     }
 

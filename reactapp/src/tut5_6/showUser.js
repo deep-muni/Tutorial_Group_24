@@ -14,10 +14,12 @@ class ShowUser extends Component {
 
     async componentDidMount(){
         const url = "http://localhost:5000/user";
-        const data = await Axios.get(url);
-        this.setState({
-            users: data.data
-        })
+        const response = await Axios.get(url);
+        if(response.data.Status === "Success"){
+            this.setState({
+                users: response.data.data
+            })
+        }       
     }
 
     show(){
