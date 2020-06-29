@@ -53,12 +53,12 @@ class ShowSpecUser extends Component {
                 </div>
                 <table>
                     <thead>
-                        <tr>
-                            <th>Banner ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                        </tr>
-                        {this.show()}
+                    <tr>
+                        <th>Banner ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                    {this.show()}
                     </thead>
                     <tbody>
                     </tbody>
