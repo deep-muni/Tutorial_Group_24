@@ -20,13 +20,14 @@ class ShowSpecUser extends Component {
             return;
         }
 
-        const url = "https://tutorial-group-24.herokuapp.com/" + document.getElementById("banner").value;
+        // const url = "https://tutorial-group-24.herokuapp.com/user/specUser/" + document.getElementById("banner").value;
+        const url = "http://localhost:5000/user/specUser/" + document.getElementById("banner").value;
         const response = await Axios.get(url);
         if(response.data.Status === "Success"){
             this.setState({
                 users: response.data.data[0]
             })
-        }  
+        }
     }
 
     show() {
