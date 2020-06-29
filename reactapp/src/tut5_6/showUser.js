@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 import './table.css';
 
@@ -33,17 +33,17 @@ class ShowUser extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                {
-                    this.state.users.map((tup, index) => {
-                        return(
-                          <tr key={index}>
-                              <td>{tup.bid}</td>
-                              <td>{tup.name}</td>
-                              <td>{tup.email}</td>
-                          </tr>
-                        );
-                    })
-                }
+                    {
+                        this.state.users.map((tup, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{tup.bid}</td>
+                                    <td>{tup.name}</td>
+                                    <td>{tup.email}</td>
+                                </tr>
+                            );
+                        })
+                    }
                 </tbody>
             </table>
         );

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
 import './bar.css';
 
+
 class Bar extends Component {
 
     constructor(props) {

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 
 class UpdateUser extends Component {
@@ -14,7 +14,14 @@ class UpdateUser extends Component {
 
     }
 
-    async updateUser(){
+    async updateUser() {
+
+        if (document.getElementById("banner").value === "" ||
+            document.getElementById("name").value === "" ||
+            document.getElementById("email").value === "") {
+            alert("Please fill the fields");
+            return;
+        }
 
         let res = '';
 
@@ -43,10 +50,10 @@ class UpdateUser extends Component {
     render() {
         return (
             <div>
-                <input type="text" id="banner" placeholder="Enter Banner ID"/>
-                <input type="text" id="name" placeholder="Enter Name"/>
-                <input type="text" id="email" placeholder="Enter Email"/>
-                <button className="updateUser" onClick={this.updateUser}>Submit</button>
+                <input type="text" id="banner" placeholder="Enter Banner ID" />
+                <input type="text" id="name" placeholder="Enter Name" />
+                <input type="text" id="email" placeholder="Enter Email" />
+                <button className="updateUser" onClick={this.updateUser}>Update</button>
                 <p className="msg">{this.state.msg}</p>
             </div>
         );
