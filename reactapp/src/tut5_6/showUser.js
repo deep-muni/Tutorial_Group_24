@@ -13,7 +13,7 @@ class ShowUser extends Component {
     }
 
     async componentDidMount(){
-        const url = "http://localhost:5000/user";
+        const url = "https://tutorial-group-24.herokuapp.com/user";
         const response = await Axios.get(url);
         if(response.data.Status === "Success"){
             this.setState({
