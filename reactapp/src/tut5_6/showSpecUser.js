@@ -20,7 +20,7 @@ class ShowSpecUser extends Component {
             return;
         }
 
-        const url = "http://localhost:5000/user/specUser/" + document.getElementById("banner").value;
+        const url = "https://tutorial-group-24.herokuapp.com/user/specUser/" + document.getElementById("banner").value;
         const data = await Axios.get(url);
         this.setState({
             users: data.data[0]
